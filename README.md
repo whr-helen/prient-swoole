@@ -10,7 +10,9 @@ prient-swoole基于Swoole扩展的分布式持久内存PHP框架。它是专门�
 <li>高性能路由器</li>
 <li>服务热重启</li>
 
-##AB测试
+
+
+# AB测试
 ```
 namespace App\Controllers;
 
@@ -44,11 +46,35 @@ Time per request:       5.777 [ms] (mean)
 Time per request:       0.058 [ms] (mean, across all concurrent requests)
 Transfer rate:          2636.97 [Kbytes/sec] received
 ```
+###比较
+同样环境下看看 easyswoole的ab测试
+```$xslt
+Server Software:        EasySwoole
+Server Hostname:        127.0.0.1
+Server Port:            9501
+
+Document Path:          /
+Document Length:        1502 bytes
+
+Concurrency Level:      100
+Time taken for tests:   0.873 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      16440000 bytes
+HTML transferred:       15020000 bytes
+Requests per second:    11460.88 [#/sec] (mean)
+Time per request:       8.725 [ms] (mean)
+Time per request:       0.087 [ms] (mean, across all concurrent requests)
+Transfer rate:          18400.09 [Kbytes/sec] received
+
+```
 
 ## 快速开始
-
-
-
+```$xslt
+前提安装了swoole.so拓展
+git@github.com:whr-helen/prient-swoole.git
+php server.php
+```
 
 <li>QQ交流：850388667</li>
     未完待续...
