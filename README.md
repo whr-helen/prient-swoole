@@ -72,7 +72,14 @@ Transfer rate:          18400.09 [Kbytes/sec] received
 ## 快速开始
 ```$xslt
 前提安装了swoole.so拓展
+方法① 
 git@github.com:whr-helen/prient-swoole.git
+
+php server.php
+
+方法②
+composer require whr-helen/prient-swoole=v1.x
+
 php server.php
 ```
 
