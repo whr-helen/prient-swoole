@@ -17,9 +17,9 @@ define("PATH_INFO",1);//PATH_INFO 0为默认的路由模式1为restful路由模�
 define("HOSTS",dirname(__DIR__));//根目录
 # swoole配置
 define("SYSTEM",[
-    'task_worker_num' =>20,//task worker数量
+    'task_worker_num' =>1,//task worker数量
     'daemonize' => false,//开启守护进程
-    'log_file' => HOSTS.'/data/log/swoole.log',//开启日志
+//    'log_file' => HOSTS.'/data/log/swoole.log',//开启日志
     'enable_static_handler' => true,//开启静态理由
     'document_root' => HOSTS.'/data',
     'static_handler_locations' => [

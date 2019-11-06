@@ -1,1 +1,36 @@
 server  http://127.0.0.1:9503
+[2019-11-06 10:29:07 $59881.0]	WARNING	swManager_check_exit_status: worker#6 abnormal exit, status=0, signal=11
+A bug occurred in Swoole-v4.2.10-beta, please report it.
+The Swoole developers probably don't know about it,
+and unless you report it, chances are it won't be fixed.
+You can read How to report a bug doc before submitting any bug reports:
+>> https://github.com/swoole/swoole-src/issues/2000
+Please do not send bug reports in the mailing list or personal letters.
+The issue page is also suitable to submit feature requests.
+
+[2019-11-06 10:29:20 $59881.0]	WARNING	swManager_check_exit_status: worker#6 abnormal exit, status=0, signal=11
+A bug occurred in Swoole-v4.2.10-beta, please report it.
+The Swoole developers probably don't know about it,
+and unless you report it, chances are it won't be fixed.
+You can read How to report a bug doc before submitting any bug reports:
+>> https://github.com/swoole/swoole-src/issues/2000
+Please do not send bug reports in the mailing list or personal letters.
+The issue page is also suitable to submit feature requests.
+
+[2019-11-06 10:30:25 $60120.0]	WARNING	swManager_check_exit_status: worker#6 abnormal exit, status=0, signal=11
+A bug occurred in Swoole-v4.2.10-beta, please report it.
+The Swoole developers probably don't know about it,
+and unless you report it, chances are it won't be fixed.
+You can read How to report a bug doc before submitting any bug reports:
+>> https://github.com/swoole/swoole-src/issues/2000
+Please do not send bug reports in the mailing list or personal letters.
+The issue page is also suitable to submit feature requests.
+
+[2019-11-06 10:49:58 @61240.0]	WARNING	swProcessPool_spawn: fork() failed. Error: Resource temporarily unavailable [35]
+[2019-11-06 10:49:58 @61240.0]	WARNING	swManager_spawn_worker: Fork Worker failed. Error: Resource temporarily unavailable [35]
+[2019-11-06 10:49:58 @61240.0]	ERROR	fork() failed.
+[2019-11-06 10:49:58 #61240.8]	WARNING	swServer_signal_handler: Fatal Error: manager process exit. status=1, signal=[Unknown signal: 0].
+[2019-11-06 10:50:39 @62408.0]	WARNING	swProcessPool_spawn: fork() failed. Error: Resource temporarily unavailable [35]
+[2019-11-06 10:50:39 @62408.0]	WARNING	swManager_spawn_worker: Fork Worker failed. Error: Resource temporarily unavailable [35]
+[2019-11-06 10:50:39 @62408.0]	ERROR	fork() failed.
+[2019-11-06 10:50:39 #62408.8]	WARNING	swServer_signal_handler: Fatal Error: manager process exit. status=1, signal=[Unknown signal: 0].
