@@ -82,7 +82,9 @@ composer require whr-helen/prient-swoole=v1.x
 
 php server.php
 ```
+打开网页 http://127.0.0.1:9503 预览效果
 
-<li>QQ交流：850388667</li>
-    未完待续...
+
+<li>未完待续... QQ交流：850388667</li>
+    
 
