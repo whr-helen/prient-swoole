@@ -1,0 +1,17 @@
+{
+  "name": "swoole/whr_demo",
+  "description": "The swoole Framework.",
+  "keywords": ["swoole", "demo"],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "php": "^7.1"
+  },
+  "autoload": {
+    "files":["conf/conf.php"],
+    "psr-4": {
+      "App\\": "app/",
+      "Framework\\": "framework/"
+    }
+  }
+}
