@@ -14,13 +14,17 @@
  */
 use Framework\Router\Restful;
 
-Restful::get("",function($req, $rep,$parameter = null){
+Restful::get("",function($http,$req, $rep,$parameter = null){
     $rep->end("hello prient1222");
 });
 
-Restful::get("index/test",function($req, $rep,$parameter = null){
+Restful::get("index/test2",function($http,$req, $rep,$parameter = null){
     $rep->end(json_encode($parameter));
 });
+
+Restful::get("task",["index"=>"IndexController@task"]);
+
+Restful::get("mysql",["index"=>"IndexController@mysql"]);
 
 Restful::get("index/{id}/{name}",["index"=>"IndexController@index"]);
 

@@ -17,7 +17,7 @@ class Router{
      * @param \swoole_http_request $req
      * @param \swoole_http_response $rep
      */
-    static function UrlDistribute(array $path_info_arr, $req, $rep){
+    static function UrlDistribute(array $path_info_arr, $req, $rep,$http){
         $path_controler = empty($path_info_arr[1])?"\App\Controllers\IndexController":"\App\Controllers\\".ucfirst($path_info_arr[1])."Controller";
         $path_active = empty($path_info_arr[2])?"index":$path_info_arr[2];
         if(class_exists($path_controler)){
@@ -30,7 +30,7 @@ class Router{
         }else{
             $func = array("\App\Controllers\ErrorController","error");
         }
-        $func($req,$rep);
+        $func($http,$req,$rep);
     }
 }
 

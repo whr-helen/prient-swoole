@@ -8,7 +8,7 @@
 namespace App\Controllers;
 class ErrorController{
 
-    function error(\swoole_http_request $req,\swoole_http_response $rep){
+    function error($http,\swoole_http_request $req,\swoole_http_response $rep){
         $rep->end("404 Not Found");
     }
 

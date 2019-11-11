@@ -35,22 +35,22 @@ class Restful{
      * @param $path_info_arr
      * 逐级拆分解析：$path_info = /index/index/1/2
      */
-    static function UrlDistribute($method,$path_info_url,$req,$rep){
+    static function UrlDistribute($method,$path_info_url,$req,$rep,$http){
 
         $path_info = self::whereisUrl($method,$path_info_url);
         if(!array_key_exists($path_info,self::$path_arr[$method])){
             $func = array("\App\Controllers\ErrorController","error");
-            $func($req,$rep);
+            $func($http,$req,$rep);
         }else{
             //解析参数
             $parameter = self::GetParameter($path_info_url,$path_info);
             $path = self::$path_arr[$method][$path_info];
             if($path instanceof \Closure){
-                $path($req,$rep,$parameter);
+                $path($http,$req,$rep,$parameter);
             }else{
                 $pathinfo_arr = explode('@',$path);
                 $func = array(new $pathinfo_arr[0],$pathinfo_arr[1]);
-                $func($req,$rep,$parameter);
+                $func($http,$req,$rep,$parameter);
             }
         }
     }

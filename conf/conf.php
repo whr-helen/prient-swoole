@@ -26,3 +26,12 @@ define("SYSTEM",[
         '/log'=>HOSTS.'/data/log'
     ],
 ]);
+define("DBMYSQL",[
+    "host"=>"127.0.0.1",
+    "prot"=>"3306",
+    "user"=>"root",
+    "password"=>"123123",
+    'database' => 'my_test',
+    'charset' => 'utf8', //指定字符集
+    'timeout' => 2
+]);

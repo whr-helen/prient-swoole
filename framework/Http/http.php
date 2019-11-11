@@ -52,9 +52,9 @@ class Http{
             }
             if (PATH_INFO == 0){
                 $path_info_arr = explode("/",$path_info);
-                Router::UrlDistribute($path_info_arr,$req,$rep);
+                Router::UrlDistribute($path_info_arr,$req,$rep,$this->http);
             }else{
-                Restful::UrlDistribute($request_method,$path_info,$req,$rep);
+                Restful::UrlDistribute($request_method,$path_info,$req,$rep,$this->http);
             }
         }
     }
@@ -70,27 +70,35 @@ class Http{
      * @param \swoole_http_server $http
      * @param int $task_id
      * @param int $src_worker_id
-     * @param mixed $data
-     * @return mixed
+     * @param $data
+     * @return string
      */
-    function onTask(\swoole_http_server $http,int $task_id,int $src_worker_id, mixed $data){
-        echo "onTask: name".$data['name'];
-        echo "onTask: data".$data['data'];
-        return $data['name'];
-    }
-
-
-    function onFinish(\swoole_http_server $serv, int $task_id, string $data){
-        echo "task name:".$data['name'];
+    function onTask(\swoole_http_server $http,int $task_id,int $src_worker_id, $data){
+        echo "onTask: name=".$data['name'].PHP_EOL;
+        echo "onTask: task_id=".$task_id.PHP_EOL;
+        $task_name = explode('@',$data['name']);
+        $func = array("\App\Task\\".ucfirst($task_name[0])."Task",$task_name[1]);
+        if(class_exists($func[0])){
+            $controller =new $func[0];
+            if(method_exists($controller,$func[1])){
+                return $func($data);
+            }else{
+                return "undefined active";
+            }
+        }else{
+            return "undefined class";
+        }
     }
 
 
     /**
-     * 投递任务
-     * @param mixed $parment
+     * @param \swoole_http_server $serv
+     * @param int $task_id
+     * @param string $data
      */
-    function Task(mixed $parment){
-        $this->Task($parment);
+    function onFinish(\swoole_http_server $serv, int $task_id, string $data){
+        echo "onFinish:".$data.PHP_EOL;
     }
+
 }
 
